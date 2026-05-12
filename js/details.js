@@ -33,6 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
+    // Save to Recent Games
+    let recent = JSON.parse(localStorage.getItem('recent_games') || '[]');
+    recent = recent.filter(id => id !== game.id);
+    recent.unshift(game.id);
+    localStorage.setItem('recent_games', JSON.stringify(recent.slice(0, 8)));
+
     // Dynamic Stats (Randomized for premium feel)
     const activeUsers = (Math.floor(Math.random() * 50000) + 10000).toLocaleString();
 

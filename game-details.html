@@ -189,16 +189,6 @@
     <script src="js/games.js"></script>
     <script src="js/details.js"></script>
     <script>
-        // Store game visit in localStorage for Recent Games logic
-        const params = new URLSearchParams(window.location.search);
-        const gameId = params.get('id');
-        if (gameId) {
-            let recent = JSON.parse(localStorage.getItem('recent_games') || '[]');
-            recent = recent.filter(id => id !== gameId);
-            recent.unshift(gameId);
-            localStorage.setItem('recent_games', JSON.stringify(recent.slice(0, 8)));
-        }
-
         // Register Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {

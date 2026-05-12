@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('a23_last_play_time', Date.now());
 
         // SEO Optimized URL (Absolute Path)
-        window.location.href = `game-details.html?id=${game.id}`;
+        window.location.href = `/games/${game.slug || game.id}`;
     };
 
     // --- Premium Coin & Playtime Reward Logic ---
