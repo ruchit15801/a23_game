@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="game-card" onclick="openGameDetails('${game.id}')">
                 <div class="game-thumb">
                     ${game.isTrending ? '<div class="recent-badge-tag" style="background: linear-gradient(90deg, #ff8a00, #e52e71);">🔥 Trending</div>' : ''}
-                    <img src="/${game.thumbnail}" alt="${game.title}" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/600x400/1e293b/f8fafc?text=${game.title.replace(/ /g, '+')}'">
+                    <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x400/6366f1/ffffff?text='+encodeURIComponent(game.title)">
                     <div class="play-badge">▶</div>
                 </div>
                 <div class="game-info">
@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="game-card" onclick="openGameDetails('${game.id}')">
                 <div class="game-thumb">
                     <div class="recent-badge-tag">Recent</div>
-                    <img src="/${game.thumbnail}" alt="${game.title}" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/600x400/1e293b/f8fafc?text=${game.title.replace(/ /g, '+')}'">
+                    <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='https://placehold.co/400x400/6366f1/ffffff?text='+encodeURIComponent(game.title)">
                     <div class="play-badge">▶</div>
                 </div>
                 <div class="game-info">
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('a23_last_play_time', Date.now());
 
         // SEO Optimized URL (Absolute Path)
-        window.location.href = `/games/${game.slug || game.id}`;
+        window.location.href = `game-details.html?id=${game.id}`;
     };
 
     // --- Premium Coin & Playtime Reward Logic ---

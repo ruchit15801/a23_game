@@ -12,12 +12,12 @@
     <link rel="canonical" href="https://a23game.in/">
 
     <!-- PWA & Icons -->
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#38bdf8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
-    <link rel="apple-touch-icon" href="/assets/icon-512.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/icon-512.png">
 
     <!-- Google Search Console (Verified via DNS) -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1818899363641893"
@@ -71,7 +71,7 @@
     }
     </script>
 
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -79,50 +79,50 @@
 
 <body>
     <div id="app-wrapper">
-        <!-- Background Elements -->
-        <div class="bg-glow bg-glow-1"></div>
-        <div class="bg-glow bg-glow-2"></div>
-        <!-- Floating Game Illustrations -->
-        <div class="bg-shapes">
-            <!-- Gamepad -->
-            <svg class="shape shape-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="6" width="20" height="12" rx="4" />
-                <path d="M6 12h4m-2-2v4m10-2h.01M14 12h.01" />
-            </svg>
-            <!-- Star -->
-            <svg class="shape shape-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg>
-            <!-- Hexagon -->
-            <svg class="shape shape-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path
-                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-            </svg>
-            <!-- Crown -->
-            <svg class="shape shape-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14" />
-            </svg>
-        </div>
-
         <header>
             <div class="container header-content">
-                <div class="logo">
-                    <img src="/assets/logo.png" class="logo-icon-img" alt="A23 Logo">
+                <a href="index.html" class="logo">
+                    <img src="assets/logo.png" class="logo-icon-img" alt="A23 Logo">
                     <h1>A23<span>GAMES</span></h1>
-                </div>
-                <div class="user-info">
+                </a>
+                <div class="header-right">
                     <div class="coin-balance">
                         <span class="coin-icon">🪙</span>
                         <span id="balance-amount">5</span>
                     </div>
+                    <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </div>
             </div>
         </header>
+
+        <!-- Side Drawer -->
+        <div class="drawer-overlay" id="drawer-overlay"></div>
+        <div class="side-drawer" id="side-drawer">
+            <nav class="drawer-nav">
+                <a href="index.html" class="drawer-nav-link active">
+                    <span>🏠</span> Home
+                </a>
+                <a href="about.html" class="drawer-nav-link">
+                    <span>ℹ️</span> About Us
+                </a>
+                <a href="contact.html" class="drawer-nav-link">
+                    <span>📧</span> Contact Us
+                </a>
+                <a href="privacy.html" class="drawer-nav-link">
+                    <span>🛡️</span> Privacy Policy
+                </a>
+                <a href="terms.html" class="drawer-nav-link">
+                    <span>📜</span> Terms & Conditions
+                </a>
+            </nav>
+            <div class="drawer-footer">
+                <p style="text-align: center; color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 A23Games</p>
+            </div>
+        </div>
 
         <main class="container">
             <!-- Search & Filter -->
@@ -190,21 +190,49 @@
 
         <footer>
             <div class="container footer-content">
+                <a href="index.html" class="footer-logo">
+                    <img src="assets/logo.png" alt="A23 Logo">
+                    <h2>A23<span>GAMES</span></h2>
+                </a>
                 <div class="footer-links">
-                    <a href="/privacy.html">Privacy Policy</a>
-                    <a href="/terms.html">Terms of Service</a>
+                    <a href="about.html">About Us</a>
+                    <a href="contact.html">Contact Us</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
                 </div>
-                <p>&copy; 2026 A23Games. All rights reserved.</p>
+                <p class="footer-copyright">&copy; 2026 A23Games. Play Premium HTML5 Games for Free.</p>
             </div>
         </footer>
     </div>
-    <script src="/js/games.js"></script>
-    <script src="/js/main.js"></script>
+    <script src="js/games.js"></script>
+    <script src="js/main.js"></script>
     <script>
+        // Hamburger Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const sideDrawer = document.getElementById('side-drawer');
+        const drawerOverlay = document.getElementById('drawer-overlay');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            sideDrawer.classList.toggle('active');
+            drawerOverlay.classList.toggle('active');
+            document.body.style.overflow = sideDrawer.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        drawerOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu on link click
+        document.querySelectorAll('.drawer-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                if (sideDrawer.classList.contains('active')) toggleMenu();
+            });
+        });
+
         // Register PWA Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
+                navigator.serviceWorker.register('sw.js')
                     .then(reg => console.log('PWA: Service Worker registered successfully.'))
                     .catch(err => console.log('PWA: Service Worker registration failed.', err));
             });

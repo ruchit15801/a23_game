@@ -3,12 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | A23Games</title>
+    <meta name="description" content="Get in touch with the A23Games team. We'd love to hear from you!">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1818899363641893" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="site-wrapper">
+    <div id="app-wrapper">
         <header>
-            <div class="container header-container">
+            <div class="container header-content">
                 <a href="index.html" class="logo">
                     <img src="assets/logo.png" class="logo-icon-img" alt="A23 Logo">
                     <h1>A23<span>GAMES</span></h1>
@@ -37,13 +49,13 @@
                 <a href="about.html" class="drawer-nav-link">
                     <span>ℹ️</span> About Us
                 </a>
-                <a href="contact.html" class="drawer-nav-link">
+                <a href="contact.html" class="drawer-nav-link active">
                     <span>📧</span> Contact Us
                 </a>
                 <a href="privacy.html" class="drawer-nav-link">
                     <span>🛡️</span> Privacy Policy
                 </a>
-                <a href="terms.html" class="drawer-nav-link active">
+                <a href="terms.html" class="drawer-nav-link">
                     <span>📜</span> Terms & Conditions
                 </a>
             </nav>
@@ -54,40 +66,39 @@
 
         <main class="page-container">
             <div class="page-header">
-                <h1>Terms & Conditions</h1>
-                <p>Last updated: April 13, 2026</p>
+                <h1>Contact Us</h1>
+                <p>Have a question or feedback? We're here to help!</p>
             </div>
 
-            <div class="page-content">
-                <section>
-                    <h2>1. Agreement to Terms</h2>
-                    <p>By accessing or using A23Games, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you must not use our services.</p>
-                </section>
+            <div id="contact-form-container" class="contact-form-card">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Game Feedback" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
 
-                <section>
-                    <h2>2. Intellectual Property</h2>
-                    <p>All content on A23Games, including games, graphics, and logos, is the property of A23Games or its content suppliers and is protected by international copyright laws.</p>
-                </section>
-
-                <section>
-                    <h2>3. User Conduct</h2>
-                    <p>You agree not to use the service for any purpose that is unlawful or prohibited by these Terms. You may not use the service in any manner that could damage, disable, or impair our servers.</p>
-                </section>
-
-                <section>
-                    <h2>4. Limitation of Liability</h2>
-                    <p>A23Games is provided "as is" without any warranties. We shall not be liable for any damages arising from the use or inability to use our services.</p>
-                </section>
-
-                <section>
-                    <h2>5. Changes to Terms</h2>
-                    <p>We reserve the right to modify these terms at any time. Your continued use of the site after changes are posted constitutes your acceptance of the new terms.</p>
-                </section>
-
-                <section>
-                    <h2>6. Governing Law</h2>
-                    <p>These terms are governed by and construed in accordance with the laws of India, and you irrevocably submit to the exclusive jurisdiction of the courts in that State or location.</p>
-                </section>
+            <div id="thank-you-message" class="thank-you-msg">
+                <span class="icon">🎉</span>
+                <h2>Thank You!</h2>
+                <p>Your message has been sent successfully. We'll get back to you as soon as possible.</p>
+                <div style="margin-top: 2rem;">
+                    <a href="/" class="page-btn">Back to Home</a>
+                </div>
             </div>
         </main>
 
@@ -128,6 +139,22 @@
         document.querySelectorAll('.drawer-nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 if (sideDrawer.classList.contains('active')) toggleMenu();
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real app, you would send the data to a server here
+            // For this demo, we'll just show the success message
+            
+            document.getElementById('contact-form-container').style.display = 'none';
+            document.getElementById('thank-you-message').style.display = 'block';
+            
+            // Smooth scroll to top of main
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
             });
         });
     </script>
